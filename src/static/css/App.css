@@ -1,0 +1,45 @@
+.App {
+  display: flex;
+  width: 100%;
+  align-items: stretch;
+}
+
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+@import "https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,500,600,700";
+
+
+body {
+  /*font-family: 'Poppins', sans-serif;*/
+  font-family: 'Nunito Sans', sans-serif;
+  /*background: #fafafa;*/
+  background-color: #f5f9fc;
+}
+
+
+a,
+a:hover,
+a:focus {
+  color: inherit;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.container,
+.container-fluid,
+.container-xxl,
+.container-xl,
+.container-lg,
+.container-md,
+.container-sm {
+  width: 100%;
+  padding-right: var(--bs-gutter-x, 0.75rem);
+  padding-left: var(--bs-gutter-x, 0.75rem);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@import "./components/sidebar.css";
+@import "./contents/home.css";
+@import "./contents/about.css";
+@import "./contents/survey.css";
+@import "./contents/contact.css";
