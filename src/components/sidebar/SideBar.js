@@ -4,10 +4,12 @@ import {
   faBriefcase,
   faPaperPlane,
   faTimes,
-  faPoll
+  faPoll,
+  faCopy
 } from "@fortawesome/free-solid-svg-icons";
 import { Nav, Button } from "react-bootstrap";
 import classNames from "classnames";
+import SubMenu from "./SubMenu";
 
 function SideBar(props) {
 
@@ -19,14 +21,6 @@ function SideBar(props) {
   return (
     <div className={classNames("sidebar", { "is-open": isOpen })}>
       <div className="sidebar-header">
-        <Button
-          variant="link"
-          onClick={toggle}
-          style={{ color: "#fff" }}
-          className="mt-4"
-        >
-          <FontAwesomeIcon icon={faTimes} pull="right" size="xs" />
-        </Button>
         <h3>Computer Ethics</h3>
       </div>
 
@@ -46,6 +40,12 @@ function SideBar(props) {
             About
           </Nav.Link>
         </Nav.Item>
+
+        <SubMenu
+          title="Data Information"
+          icon={faCopy}
+          items={["Website List", "Privacy", "How we made the list"]}
+        />
 
         <Nav.Item id="survey">
           <Nav.Link  href="/survey">

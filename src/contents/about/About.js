@@ -1,8 +1,8 @@
 
 function About() {
     return(
-        <div class="container-fluid">
-            <h1 class="mt-4">About</h1>
+        <div className="container-fluid">
+            <h1 className="mt-4">About</h1>
             <p>The starting state of the menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will change.</p>
             <p>
                 Make sure to keep all page content within the

@@ -1,0 +1,15 @@
+.answer-choice {
+    margin-top: 2vh;
+  }
+  
+  .range-choice-min {
+    margin-right: 10vh;
+  }
+  
+  .range-choice-max {
+    margin-left: 10vh;
+  }
+
+  .question-card {
+      margin-top: 10vh;
+  }

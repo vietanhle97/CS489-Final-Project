@@ -15,6 +15,20 @@ body {
   background-color: #f5f9fc;
 }
 
+#nav-dropdown {
+  background-color: white;
+}
+#nav-dropdown:hover,
+#nav-dropdown:active,
+#nav-dropdown:focus {
+  background-color: #f5f9fc;
+}
+
+#nav-item:hover,
+#nav-item:active {
+  background-color: #f5f9fc;
+  color: #000;
+}
 
 a,
 a:hover,
@@ -38,8 +52,13 @@ a:focus {
   margin-left: auto;
 }
 
+
+
 @import "./components/sidebar.css";
 @import "./contents/home.css";
 @import "./contents/about.css";
 @import "./contents/survey.css";
+@import "./contents/weblist.css";
 @import "./contents/contact.css";
+@import "./components/button.css";
+@import "./components/questioncard.css";

@@ -1,10 +1,12 @@
 .sidebar {
-    min-width: 340px;
-    max-width: 340px;
+    min-width: 290px;
+    max-width: 290px;
     background: #354052;
     color: #adb5bd;
-    margin-left: -340px;
+    margin-left: -290px;
     transition: all 0.5s;
+    min-height: 100vh;
+    overflow-y: auto;
   }
   
   .sidebar.is-open {
