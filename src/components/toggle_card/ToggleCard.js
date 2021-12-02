@@ -8,7 +8,6 @@ class ToggleCard extends Component {
   }
 
   render() {
-
     const rows = this.props.data.map((row) => {
       const name = row["name"];
       const info = row["info"];
@@ -19,12 +18,11 @@ class ToggleCard extends Component {
         </tr>
       );
     });
-
     return (
-      <Card>
+      <Card className={this.props.NameClass}>
         <Accordion.Toggle as={Card.Header} eventKey={this.props.eventKey} id={this.props.id} className="toggle-card shadow-sm border-0">
-        <h6 class="mb-0 font-weight-bold">
-          <div data-toggle="collapse" data-target={this.props.dataTarget} aria-expanded="true" aria-controls={this.props.ariaControls} class="d-block position-relative text-light text-uppercase collapsible-link py-2">{this.props.header}
+        <h6 className="mb-0 font-weight-bold">
+          <div data-toggle="collapse" data-target={this.props.dataTarget} aria-expanded="true" aria-controls={this.props.ariaControls} className="d-block position-relative text-light text-uppercase collapsible-link py-2">{this.props.header}
           </div>
         </h6>
         </Accordion.Toggle>

@@ -5,7 +5,8 @@ import {
   faPaperPlane,
   faTimes,
   faPoll,
-  faCopy
+  faCopy,
+  faLock
 } from "@fortawesome/free-solid-svg-icons";
 import { Nav, Button } from "react-bootstrap";
 import classNames from "classnames";
@@ -43,7 +44,7 @@ function SideBar(props) {
 
         <SubMenu
           title="Data Information"
-          icon={faCopy}
+          icon={faLock}
           items={["Website List", "Privacy", "How we made the list"]}
         />
 

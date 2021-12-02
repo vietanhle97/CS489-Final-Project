@@ -1,19 +1,11 @@
-.web-list-subtitle {
-  font-size: 16pt;
-  margin-left: 10vh;
-}
-
-.web-list-title {
-  margin-left: 10vh;
-}
 .collapsible-link::before {
   content: '';
-  width: 14px;
-  height: 2px;
+  width: 2px;
+  height: 14px;
   background: #ffffff;
   position: absolute;
-  top: calc(50% - 1px);
-  right: 1rem;
+  top: calc(50% - 7px);
+  right: calc(1rem + 6px);
   display: block;
   transition: all 0.3s;
 }
@@ -47,6 +39,14 @@
   background: #ffffff;
 }
 
+.accordion_item_last {
+  margin-bottom: 5vh;
+}
+
 .weblist {
   margin-top: 5vh;
+}
+
+.weblist-page {
+  margin-bottom: 5vh;
 }

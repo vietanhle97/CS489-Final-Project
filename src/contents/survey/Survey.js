@@ -135,7 +135,7 @@ class Survey extends Component {
 
     return(
       <div className="mx-5 mx-sm-5">
-        <h1 className="mt-4">Survey</h1>
+        <h1 className="page-title mt-4">Survey</h1>
         <QuestionCard question={question} answers={answers} ranges={ranges} handleCheckBox={this.handleCheckBox} choices={choices} check= {this.handleCheckBox} showButton={this.handleShowButton} ></QuestionCard>
         <div className="btn-toolbar justify-content-between" role="toolbar" aria-label="Toolbar with button groups">
           <div className="btn-group" role="group" aria-label="First group">

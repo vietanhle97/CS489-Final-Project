@@ -9,6 +9,8 @@ import Survey from "./survey/Survey";
 import Contact from "./contact/Contact";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import WebList from "./data_information/WebList";
+import HowWeMadeList from "./data_information/HowWeMadeList";
+import Privacy from "./data_information/Privacy";
 
 
 class Content extends Component {
@@ -24,6 +26,8 @@ class Content extends Component {
               <Route path="/" exact element={<Home />}/>
               <Route path="/about" exact element={<About />}/>
               <Route path="/website-list" exact element={<WebList />}/>
+              <Route path="/how-we-made-the-list" exact element={<HowWeMadeList />}/>
+              <Route path="/privacy" exact element={<Privacy />}/>
               <Route path="/survey" exact element={<Survey />}/>
               <Route path="/contact" exact element={<Contact />}/>
           </Routes>

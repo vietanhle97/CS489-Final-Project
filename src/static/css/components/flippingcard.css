@@ -1,0 +1,100 @@
+.page-container .card-container {
+  height: 370px;
+  margin: 0;
+  padding: 0;
+  top: 20px;
+  margin-left: 15vh;
+  margin-right: 15vh;
+  width: 350px;
+  position: relative;
+  transform-style: preserve-3d;
+  box-sizing: border-box;
+}
+.page-container .card-container.flipped .front {
+  transform: rotateY(180deg);
+}
+.page-container .card-container.flipped .back {
+  transform: rotateY(0deg);
+}
+
+.page-container .card-container.flipped .back .back-text{
+  color: white;
+}
+
+.page-container .card-container .front,
+.page-container .card-container .back {
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+  display: block;
+  background: #354052;
+  box-shadow: 5px 5px 2px gray;
+  padding: 10px;
+  position: absolute;
+  border-radius: 10px;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  transition: -webkit-transform ease 500ms;
+  transition: transform ease 500ms;
+}
+.page-container .card-container .front {
+  z-index: 2;
+  transform: rotateY(0deg);
+  /* front tile styles go here! */
+}
+.page-container .card-container .back {
+  background: #354052;
+  transform: rotateY(-180deg);
+  padding: 20px;
+  font-size: 20px;
+  /* back tile styles go here! */
+}
+.page-container .card-container .image-container {
+  position: relative;
+  margin-top: 2vh;
+}
+.page-container .card-container .image-container .card-image {
+  width: 50%;
+  border-radius: 10px;
+}
+.page-container .card-container .image-container .title {
+  font-size: 34px;
+  position: absolute;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  bottom: 0;
+  left: 0;
+  color: white;
+}
+.page-container .card-container .main-area {
+  margin-left: 10px;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+.page-container .card-container .main-area .blog-post {
+  height: 100%;
+}
+.page-container .card-container .main-area .blog-post .date {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-size: 20px;
+  color: white;
+}
+.page-container .card-container .main-area .blog-post .read-more {
+  font-size: 22px;
+  position: relative;
+  margin-top: 5vh;
+  text-align: center;
+  color: white;
+}
+.page-container .card-container .main-area .blog-post .blog-content {
+  height: 90%;
+  display: block;
+  margin-top: 8vh;
+  bottom: 0;
+  margin-bottom: 10px;
+  white-space: nowrap;
+  text-align: center;
+  margin-bottom: 1vh;
+  color: white;
+}

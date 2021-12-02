@@ -13,6 +13,7 @@ body {
   font-family: 'Nunito Sans', sans-serif;
   /*background: #fafafa;*/
   background-color: #f5f9fc;
+  min-height: 400px;
 }
 
 #nav-dropdown {
@@ -28,6 +29,15 @@ body {
 #nav-item:active {
   background-color: #f5f9fc;
   color: #000;
+}
+
+.page-subtitle {
+  font-size: 16pt;
+  margin-left: 10vh;
+}
+
+.page-title {
+  margin-left: 10vh;
 }
 
 a,
@@ -62,3 +72,6 @@ a:focus {
 @import "./contents/contact.css";
 @import "./components/button.css";
 @import "./components/questioncard.css";
+@import "./contents/howwemade.css";
+@import "./components/flippingcard.css";
+@import "./contents/privacy.css";
