@@ -1,17 +1,16 @@
-import { Component } from "react";
+import { Component, lazy, Suspense } from "react";
 import classNames from "classnames";
 import { Container } from "react-bootstrap";
 import NavBar from "../components/navbar/Navbar";
-import Home from "./home/Home";
-
-import About from "./about/About";
-import Survey from "./survey/Survey";
-import Contact from "./contact/Contact";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import WebList from "./data_information/WebList";
-import HowWeMadeList from "./data_information/HowWeMadeList";
-import Privacy from "./data_information/Privacy";
 
+const Home = lazy(() => import ("./home/Home"));
+const About = lazy(() => import ("./about/About"));
+const Survey = lazy(() => import ("./survey/Survey"));
+const Contact = lazy(() => import ("./contact/Contact"));
+const WebList = lazy(() => import ("./data_information/WebList"));
+const HowWeMadeList = lazy(() => import ("./data_information/HowWeMadeList"));
+const Privacy = lazy(() => import ("./data_information/Privacy"));
 
 class Content extends Component {
   render() {
@@ -22,15 +21,17 @@ class Content extends Component {
       >
         <NavBar toggle={this.props.toggle} />
         <Router>
-          <Routes>
-              <Route path="/" exact element={<Home />}/>
-              <Route path="/about" exact element={<About />}/>
-              <Route path="/website-list" exact element={<WebList />}/>
-              <Route path="/how-we-made-the-list" exact element={<HowWeMadeList />}/>
-              <Route path="/privacy" exact element={<Privacy />}/>
-              <Route path="/survey" exact element={<Survey />}/>
-              <Route path="/contact" exact element={<Contact />}/>
-          </Routes>
+          <Suspense fallback={<div>Loading...</div>}>
+            <Routes>
+                <Route path="/" exact element={<Home />}/>
+                <Route path="/about" exact element={<About />}/>
+                <Route path="/website-list" exact element={<WebList />}/>
+                <Route path="/how-we-made-the-list" exact element={<HowWeMadeList />}/>
+                <Route path="/privacy" exact element={<Privacy />}/>
+                <Route path="/survey" exact element={<Survey />}/>
+                <Route path="/contact" exact element={<Contact />}/>
+            </Routes>
+          </Suspense>
         </Router>
       </Container>
     );
