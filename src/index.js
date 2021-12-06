@@ -4,8 +4,6 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-import firebase from "./firebase_utils/firebase"
-
 ReactDOM.render(
   <React.StrictMode>
     <App />

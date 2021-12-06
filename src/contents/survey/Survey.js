@@ -1,7 +1,11 @@
-import { Component } from "react";
+import { Component, lazy } from "react";
 import { Button } from "react-bootstrap";
 import QuestionCard from "../../components/questions/QuestionCard";
 import questions from "../../data/questions";
+
+import { db } from "../../firebase_utils/firebase";
+import firebase from 'firebase/compat/app';
+import { useNavigate } from "react-router-dom";
 
 class Survey extends Component {
   
@@ -12,9 +16,7 @@ class Survey extends Component {
         total: questions.length,
         showNext: false,
         showPrev: false,
-
         score: 0,
-        displayPopup: 'flex'
     }
     this.nextQuestion = this.nextQuestion.bind(this);
     this.prevQuestion = this.prevQuestion.bind(this);
@@ -24,11 +26,11 @@ class Survey extends Component {
   }
 
   saveAnswer(nr) {
-    localStorage.setItem(nr, this.state.choices.map(Number).join(','));
+    localStorage.setItem(nr+1, this.state.choices.map(Number).join(','));
   }
 
   getAnswer(nr) {
-    const choices =  localStorage.getItem(nr.toString());
+    const choices =  localStorage.getItem((nr+1).toString());
 
     if (choices != undefined) {
       return choices.split(",").map(Number).map(Boolean);
@@ -41,29 +43,22 @@ class Survey extends Component {
     if (code === 1) {
       this.saveAnswer(nr);
       this.setState({
-          question: questions[nr].question,
-          answers: questions[nr].answers,
-          ranges: questions[nr].ranges,
-          nr: this.state.nr + 1
+          nr: nr + 1,
+          showPrev: true
       });
     } else if (code === 0) {
         let choices = this.getAnswer(nr+1)
         this.setState({
-          question: questions[nr].question,
-          answers: questions[nr].answers,
-          ranges: questions[nr].ranges,
           choices: choices != undefined? choices : Array(questions[nr].answers.length).fill(false),
-          nr: this.state.nr + 1,
-          showNext: choices != undefined? true : false
+          nr: nr,
+          showNext: choices != undefined? true : false,
         });
     } else {
       let choices = this.getAnswer(nr-1)
       this.setState({
-        question: questions[nr].question,
-        answers: questions[nr].answers,
-        ranges: questions[nr].ranges,
         choices: choices,
-        nr: this.state.nr - 1,
+        nr: nr - 1,
+        showPrev: nr - 1 > 0
       });
     }
   }
@@ -74,29 +69,24 @@ class Survey extends Component {
   }
 
   nextQuestion() {
+    // this.submitAnswer();   
     let { nr, total} = this.state;
 
     if(nr === total){
-        this.setState({
-            displayPopup: 'flex'
-        });
     } else {
       this.pushQuestions(nr, 1);
       let choices = this.getAnswer(nr+1)
       this.setState({
         showNext: choices != undefined? true : false,
-        showPrev: nr > 0,
+        showPrev: true,
         choices: choices != undefined? choices : Array(questions[nr].answers.length).fill(false),
       });
     }
   }
 
   prevQuestion() {
-    console.log("hello")
     let { nr } = this.state;
-    console.log(nr)
     let choices = this.getAnswer(nr-1)
-    console.log(choices)
     this.pushQuestions(nr, -1);
     this.setState({
       showNext: true,
@@ -125,25 +115,84 @@ class Survey extends Component {
     newChoices[pos] = !this.state.choices[pos];
     this.setState({
       choices: newChoices,
+      showPrev: this.state.nr > 0,
     });
+  }
+
+  submitAnswer = async () => {
+    console.log("fetching...")
+    const answerData = db.collection('Questions');
+    for (var i=1; i<this.state.total; i++) {
+      let ans = this.getAnswer(i);
+      if (ans == null) {
+        ans = this.state.choices;
+      }
+      const idx = ans.findIndex(function (el) {
+        return el != null && el === true;
+      }) + 1;
+      this.handleUpdate(answerData, i.toString(), idx);
+      localStorage.removeItem(i);
+    }
+  
+    this.props.navigation('/visualize');
+  }
+
+  handleUpdate(answerData, doc, key) {
+    switch(key) {
+      case 1:
+        answerData.doc(doc).update({
+          1: firebase.firestore.FieldValue.increment(1)
+        })
+        break;
+      case 2:
+        answerData.doc(doc).update({
+          2: firebase.firestore.FieldValue.increment(1)
+        })
+        break;
+      case 3:
+        answerData.doc(doc).update({
+          3: firebase.firestore.FieldValue.increment(1)
+        })
+        break;
+      case 4:
+        answerData.doc(doc).update({
+          4: firebase.firestore.FieldValue.increment(1)
+        })
+        break;
+      case 5:
+        answerData.doc(doc).update({
+          5: firebase.firestore.FieldValue.increment(1)
+        })
+        break;
+      case 6:
+        answerData.doc(doc).update({
+          6: firebase.firestore.FieldValue.increment(1)
+        })
+        break;
+      default:
+        answerData.doc(doc).update({
+          7: firebase.firestore.FieldValue.increment(1)
+        })
+        break;
+    }
   }
 
 
   render() {
 
-    let { nr, total, question, answers, ranges, choices, showNext, showPrev} = this.state;
+    let { nr, total, choices, showNext, showPrev} = this.state;
 
     return(
       <div className="mx-5 mx-sm-5">
         <h1 className="page-title mt-4">Survey</h1>
-        <QuestionCard question={question} answers={answers} ranges={ranges} handleCheckBox={this.handleCheckBox} choices={choices} check= {this.handleCheckBox} showButton={this.handleShowButton} ></QuestionCard>
+        <QuestionCard id={questions[nr].id} question={questions[nr].question} answers={questions[nr].answers} ranges={questions[nr].ranges} handleCheckBox={this.handleCheckBox} choices={choices} check= {this.handleCheckBox} showButton={this.handleShowButton} ></QuestionCard>
         <div className="btn-toolbar justify-content-between" role="toolbar" aria-label="Toolbar with button groups">
           <div className="btn-group" role="group" aria-label="First group">
-            {nr > 1 ? <Button className="fancy-btn prev-button" onClick={this.prevQuestion} > Previous </Button> : null}
+            {showPrev? <Button className="fancy-btn prev-button" onClick={this.prevQuestion} > Previous </Button> : null}
           </div>
           <div className="input-group">
             <div className="input-group-prepend">
-              {showNext ? <Button className="fancy-btn next-button" onClick={this.nextQuestion} >{nr === total ? 'Submit' : 'Next'}</Button> : null}
+              {showNext ? <Button className="fancy-btn next-button" onClick={nr === total-1 ? this.submitAnswer : this.nextQuestion} >{nr === total-1 ? 'Submit' : 'Next'}</Button> : null}
             </div>
           </div>
         </div>
@@ -152,4 +201,8 @@ class Survey extends Component {
   }
 }
 
-export default Survey;
+export default function(props) {
+  const navigation = useNavigate();
+
+  return <Survey {...props} navigation={navigation} />;
+}

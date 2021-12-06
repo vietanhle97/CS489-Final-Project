@@ -11,6 +11,7 @@ const Contact = lazy(() => import ("./contact/Contact"));
 const WebList = lazy(() => import ("./data_information/WebList"));
 const HowWeMadeList = lazy(() => import ("./data_information/HowWeMadeList"));
 const Privacy = lazy(() => import ("./data_information/Privacy"));
+const Visualization = lazy(() => import ("./visualization/Visualization"));
 
 class Content extends Component {
   render() {
@@ -29,6 +30,7 @@ class Content extends Component {
                 <Route path="/how-we-made-the-list" exact element={<HowWeMadeList />}/>
                 <Route path="/privacy" exact element={<Privacy />}/>
                 <Route path="/survey" exact element={<Survey />}/>
+                <Route path="/visualize" exact element={<Visualization />}/>
                 <Route path="/contact" exact element={<Contact />}/>
             </Routes>
           </Suspense>

@@ -1,5 +1,4 @@
 import { MDBTable, MDBTableBody, MDBTableHead } from "mdbreact";
-import { Card, Table } from "react-bootstrap";
 import websites from "../../data/websites";
 
 function HowWeMadeList() {

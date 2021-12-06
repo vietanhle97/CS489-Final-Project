@@ -75,3 +75,4 @@ a:focus {
 @import "./contents/howwemade.css";
 @import "./components/flippingcard.css";
 @import "./contents/privacy.css";
+@import "./contents/visualization.css"

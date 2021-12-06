@@ -33,10 +33,12 @@ class QuestionCard extends Component {
             <div className="card-body">
               <div className="text-center">
                 <h3>
-                  <strong>{this.props.question}</strong>
+                  <strong>{this.props.id + ". " + this.props.question["eng"]}</strong>
                 </h3>
+                <h4>
+                  <strong>{this.props.question["kor"]}</strong>
+                </h4>
               </div>
-  
               <div className="text-center mb-3 answer-choice">
                 <div className="d-inline range-choice-min">
                   {this.props.ranges[0]}

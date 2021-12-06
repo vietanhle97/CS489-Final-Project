@@ -6,7 +6,8 @@ import {
   faTimes,
   faPoll,
   faCopy,
-  faLock
+  faLock,
+  faChartBar
 } from "@fortawesome/free-solid-svg-icons";
 import { Nav, Button } from "react-bootstrap";
 import classNames from "classnames";
@@ -55,12 +56,21 @@ function SideBar(props) {
           </Nav.Link>
         </Nav.Item>
 
+        <Nav.Item id="visualize">
+          <Nav.Link  href="/visualize">
+            <FontAwesomeIcon icon={faChartBar} className="mr-2" />
+            Visualization
+          </Nav.Link>
+        </Nav.Item>
+
         <Nav.Item id="contact">
           <Nav.Link  href="/contact">
             <FontAwesomeIcon icon={faPaperPlane} className="mr-2" />
             Contact
           </Nav.Link>
         </Nav.Item>
+
+        
       </Nav>
     </div>
   );
