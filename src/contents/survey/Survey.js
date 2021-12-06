@@ -120,9 +120,8 @@ class Survey extends Component {
   }
 
   submitAnswer = async () => {
-    console.log("fetching...")
     const answerData = db.collection('Questions');
-    for (var i=1; i<this.state.total; i++) {
+    for (var i=1; i<=this.state.total; i++) {
       let ans = this.getAnswer(i);
       if (ans == null) {
         ans = this.state.choices;
