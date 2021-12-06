@@ -1,6 +1,5 @@
 import  { Component } from "react";
 import question from "../../question.png";
-import { MDBTable, MDBTableBody, MDBTableHead } from "mdbreact";
 
 class FlippingCard extends Component {
   constructor(props) {

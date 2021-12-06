@@ -1,4 +1,4 @@
-import { MDBTable, MDBTableBody, MDBTableHead } from "mdbreact";
+import { Table } from "react-bootstrap";
 import websites from "../../data/websites";
 
 function HowWeMadeList() {
@@ -30,18 +30,18 @@ function HowWeMadeList() {
           For more information, please use the link we provide in the table below.
       </div>
       <div className="how-we-made">
-        <MDBTable bordered className="how-we-made-table">
-          <MDBTableHead>
+        <Table bordered className="how-we-made-table">
+          <thead>
             <tr>
               <th className="how-we-made-table-header">Company</th>
               <th className="how-we-made-table-header">Website</th>
               <th className="how-we-made-table-header">Privacy Policy URL</th>
             </tr>
-          </MDBTableHead>
-          <MDBTableBody>
+          </thead>
+          <tbody>
             {rows}  
-          </MDBTableBody>
-        </MDBTable>
+          </tbody>
+        </Table>
       </div>
     </div>
   );
