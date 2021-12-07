@@ -46,7 +46,7 @@ function SideBar(props) {
         <SubMenu
           title="Data Information"
           icon={faLock}
-          items={["Website List", "Privacy", "How we made the list"]}
+          items={[{name:"Website List", path:"website-list"}, {name: "Privacy", path: "privacy"}, {name: "How we made the list", path: "how-we-made-the-list"}]}
         />
 
         <Nav.Item id="survey">
@@ -56,13 +56,11 @@ function SideBar(props) {
           </Nav.Link>
         </Nav.Item>
 
-        <Nav.Item id="visualize">
-          <Nav.Link  href="/visualize">
-            <FontAwesomeIcon icon={faChartBar} className="mr-2" />
-            Visualization
-          </Nav.Link>
-        </Nav.Item>
-
+        <SubMenu
+          title="Visualization"
+          icon={faChartBar}
+          items={[{name:"Survey", path:"visualize-survey"}, {name: "Website", path: "visualize-website"}]}
+        />
         <Nav.Item id="contact">
           <Nav.Link  href="/contact">
             <FontAwesomeIcon icon={faPaperPlane} className="mr-2" />

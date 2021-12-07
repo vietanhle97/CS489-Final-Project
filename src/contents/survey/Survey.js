@@ -123,7 +123,7 @@ class Survey extends Component {
   }
 
   submitAnswer = async () => {
-    const answerData = db.collection('Questions');
+    const answerData = db.collection('WebSurvey');
     for (var i=1; i<=this.state.total; i++) {
       let ans = this.getAnswer(i);
       if (ans == null) {
@@ -136,7 +136,7 @@ class Survey extends Component {
       localStorage.removeItem(i);
     }
   
-    this.props.navigation('/visualize');
+    this.props.navigation('/visualize-website');
   }
 
   handleUpdate(answerData, doc, key) {
