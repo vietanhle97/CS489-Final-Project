@@ -9,7 +9,7 @@ function VisualizationSurvey() {
   const [series1, setSeries1] = useState([]);
   const [series2, setSeries2] = useState([]);
   const dataRef = collection(db, "Questions");
-  const categories = ["Aware of collected data types",	"Checks policy",	"Manages Cookie", "Feels being watched",	"Worries about site's data collection",	"Worries about others knowing me too much",	"Worries about easy-to-access private information", "Worries about collected data leakage",	"Worries about unaware use of data",	"Worries about unpermitted data sharing"];
+  const categories = ["Aware of collected data types",	"Checks policy",	"Manages Cookie", "Feels being watched",	"Site's data collection",	"Others knowing me too much",	"Easy-to-access private information", "Collected data leakage",	"Unaware use of data",	"Unpermitted data sharing"];
 
   const options = {
     chart: {
