@@ -11,11 +11,11 @@ function Privacy() {
         Are you aware of these data?
       </div>
       <div className="d-flex justify-content-center privacy-cards">
-        <div class="d-flex flex-row">
-          <div class="d-flex flex-row bd-highlight mb-3 ">
+        <div className="d-flex flex-row">
+          <div className="d-flex flex-row bd-highlight mb-3 ">
             <FlippingCard content="Privacy-sensitive Information?" isSensitive={true}></FlippingCard>
           </div>
-          <div class="d-flex flex-row-reverse bd-highlight">
+          <div className="d-flex flex-row-reverse bd-highlight">
             <FlippingCard content="Non-sensitive Information?" isSensitive={false}></FlippingCard>
           </div>
         </div>

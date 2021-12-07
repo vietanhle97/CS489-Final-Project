@@ -75,7 +75,6 @@ function Visualization() {
     getData();
   }, [])
 
-  console.log(series[0])
   return (
     <div className="mx-5 mx-sm-5">
       <h1 className="mt-4 text-center">Worried about...</h1>
