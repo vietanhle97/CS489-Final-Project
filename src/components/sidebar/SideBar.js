@@ -36,12 +36,12 @@ function SideBar(props) {
           </Nav.Link>
         </Nav.Item>
 
-        <Nav.Item id="about">
+        {/* <Nav.Item id="about">
           <Nav.Link  href="/about" >
             <FontAwesomeIcon icon={faBriefcase} className="mr-2" />
             About
           </Nav.Link>
-        </Nav.Item>
+        </Nav.Item> */}
 
         <SubMenu
           title="Data Information"
@@ -61,12 +61,12 @@ function SideBar(props) {
           icon={faChartBar}
           items={[{name:"Survey", path:"visualize-survey"}, {name: "Website", path: "visualize-website"}]}
         />
-        <Nav.Item id="contact">
+        {/* <Nav.Item id="contact">
           <Nav.Link  href="/contact">
             <FontAwesomeIcon icon={faPaperPlane} className="mr-2" />
             Contact
           </Nav.Link>
-        </Nav.Item>
+        </Nav.Item> */}
 
         
       </Nav>

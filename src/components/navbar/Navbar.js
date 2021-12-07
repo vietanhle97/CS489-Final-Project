@@ -21,7 +21,7 @@ function NavBar(props) {
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="ml-auto" navbar>
                 <Nav.Link href="/">Home</Nav.Link>
-                <Nav.Link href="/about">About</Nav.Link>
+                {/* <Nav.Link href="/about">About</Nav.Link> */}
                 <NavDropdown title="Data Information" id="nav-dropdown">
                   <NavDropdown.Item href="/website-list" id="nav-item">Website List</NavDropdown.Item>
                   <NavDropdown.Item href="/privacy" id="nav-item">Privacy</NavDropdown.Item>
