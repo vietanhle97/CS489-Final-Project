@@ -28,7 +28,7 @@ function Visualization() {
       }
     },
     xaxis: {
-      categories: ["unpermitted data sharing", "unaware use of data", "data leakage", "ease to access private information", "others know me too much", "site data collection", "feels being watch", "manages cookies", "check policy"],
+      categories: ["Aware of collected data types",	"Checks policy",	"Manages Cookie", "Feels being watched",	"Worries about site's data collection",	"Worries about others knowing me too much",	"Worries about easy-to-access private information", "Worries about collected data leakage",	"Worries about unaware use of data",	"Worries about unpermitted data sharing"],
     },
     fill: {
       opacity: 1
