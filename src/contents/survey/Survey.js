@@ -23,6 +23,7 @@ class Survey extends Component {
     this.handleShowButton = this.handleShowButton.bind(this);
     this.handleStartSurvey = this.handleStartSurvey.bind(this);
     this.handleCheckBox = this.handleCheckBox.bind(this);
+    this.handleStartSurvey();
   }
 
   saveAnswer(nr) {
@@ -107,9 +108,6 @@ class Survey extends Component {
     for (var i=1; i<=this.state.total; i++) {
       localStorage.removeItem(i);
     }
-    this.setState({
-        nr: 1
-    });
   }
 
   handleCheckBox = (pos) => {
