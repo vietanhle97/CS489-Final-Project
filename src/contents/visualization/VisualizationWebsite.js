@@ -9,7 +9,7 @@ function VisualizationWebsite() {
 	const [series1, setSeries1] = useState([]);
 	const [series2, setSeries2] = useState([]);
   const dataRef = collection(db, "WebSurvey");
-  const categories = ["Perception change", "Future helpfulness",  "Data leak prevention", "Site's data collection", "Others know me too much", "Easy-to-access private information", "Data leakage", "Worried about unaware use of data", "Unpermitted data sharing"];
+  const categories = ["Perception change", "Future helpfulness",  "Data leak prevention", "Site's data collection", "Others know me too much", "Easy-to-access private information", "Data leakage", "Unaware use of data", "Unpermitted data sharing"];
 
 
   const options = {
