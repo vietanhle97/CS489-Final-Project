@@ -104,9 +104,12 @@ class Survey extends Component {
   }
 
   handleStartSurvey() {
-      this.setState({
-          nr: 1
-      });
+    for (var i=1; i<=this.state.total; i++) {
+      localStorage.removeItem(i);
+    }
+    this.setState({
+        nr: 1
+    });
   }
 
   handleCheckBox = (pos) => {
