@@ -9,7 +9,6 @@ function App() {
   const [isOpen, setIsOpen] = useState(false);
   
 	const toggle = () => setIsOpen(!isOpen)
-
   return (
     <div className="App wrapper">
       <SideBar toggle={toggle} isOpen={isOpen} />
