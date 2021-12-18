@@ -59,7 +59,7 @@ function SideBar(props) {
         <SubMenu
           title="Visualization"
           icon={faChartBar}
-          items={[{name:"Survey", path:"visualize-survey"}, {name: "Website", path: "visualize-website"}]}
+          items={[{name:"Pre-survey", path:"visualize-survey"}, {name: "Website Survey", path: "visualize-website"}]}
         />
         {/* <Nav.Item id="contact">
           <Nav.Link  href="/contact">

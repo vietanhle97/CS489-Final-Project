@@ -90,9 +90,9 @@ function VisualizationWebsite() {
   }, [])
 
 	let options1 = JSON.parse(JSON.stringify(options));
-  options1.xaxis = {categories: categories.slice(0, 4)}
+  options1.xaxis = {categories: categories.slice(0, 3)}
   let options2 = JSON.parse(JSON.stringify(options));
-  options2.xaxis = {categories: categories.slice(4, categories.length)}
+  options2.xaxis = {categories: categories.slice(3, categories.length)}
 
   return (
     <div className="mx-5 mx-sm-5">

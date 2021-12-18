@@ -29,8 +29,8 @@ function NavBar(props) {
                 </NavDropdown>
                 <Nav.Link href="/survey">Survey</Nav.Link>
                 <NavDropdown title="Visualization" id="nav-dropdown">
-                  <NavDropdown.Item href="/visualize-survey" id="nav-item">Survey</NavDropdown.Item>
-                  <NavDropdown.Item href="/visualize-website" id="nav-item">Website</NavDropdown.Item>
+                  <NavDropdown.Item href="/visualize-survey" id="nav-item">Pre-survey</NavDropdown.Item>
+                  <NavDropdown.Item href="/visualize-website" id="nav-item">Website Survey</NavDropdown.Item>
                 </NavDropdown>
               </Nav>
             </Navbar.Collapse>
